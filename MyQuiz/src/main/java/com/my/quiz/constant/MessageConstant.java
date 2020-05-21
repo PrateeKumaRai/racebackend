@@ -1,0 +1,41 @@
+package com.my.quiz.constant;
+
+public class MessageConstant {
+	public static final String SAVE_SUCCESS_QUIZ = "Succesfully Saved the Quiz..";
+	public static final String SAVE_SUCCESS_QUESTION = "Succesfully Saved the Question..";
+	public static final String SAVE_SUCCESS_ANSWER = "Succesfully Saved the Answer..";
+	public static final String SAVE_SUCCESS_ANSWER_LIST = "Succesfully Saved the Answers..";
+	public static final String SAVE_SUCCESS_PLAYER = "Succesfully Saved the Player..";
+	public static final String SAVE_SUCCESS_PLAYQUIZ = "Succesfully Saved the Playquiz..";
+	public static final String SAVE_SUCCESS_ADMINUSERSYNC = "Succesfully Saved the AdminUserSync..";
+	public static final String INTERNAL_SERVER_ERROR = "Oops Something went wrong !!";
+	public static final String UPDATE_SUCCESS_QUIZ = "Succesfully Update the Quiz Details";
+	public static final String UPDATE_SUCCESS_QUESTION = "Succesfully Update the Question Details";
+	public static final String UPDATE_SUCCESS_GLOBALCONFIG = "Succesfully Update the GlobalConfiguration Details";
+	public static final String UPDATE_SUCCESS_ANSWER = "Succesfully Update the Answer Details";
+	public static final String UPDATE_SUCCESS_ADMINUSERSYNC = "Succesfully Update the AdminUserSync Details";
+	public static final String NOT_FOUND_QUIZ = "Sorry we didn't got the Quiz data";
+	public static final String NOT_FOUND_PLAY_QUIZ = "Sorry we didn't got the Playquiz data";
+	public static final String NOT_FOUND_QUESTION = "Sorry we didn't got the Question data";
+	public static final String NOT_FOUND_ANSWER = "Sorry we didn't got the Answer data";
+	public static final String NOT_FOUND_PLAYER = "Sorry we didn't got the Player data";
+	public static final String NOT_FOUND_PLAYQUIZ = "Sorry we didn't got the Playquiz data";
+	public static final String NOT_FOUND_ADMINUSERSYNC= "Sorry we didn't got the AdminUserSync data";
+	public static final String NOT_FOUND_GLOBALCONFIG= "Sorry we didn't got the GlobalConfiguration data";
+	public static final String NOT_FOUND_QUIZ_RESULT= "Sorry we didn't got the QuizResult data";
+	public static final String GET_QUIZ_SUCCESS = "Succesfully Get the Quiz..";
+	public static final String GET_ANSWER_SUCCESS = "Succesfully Get the Answers..";
+	public static final String GET_QUESTION_SUCCESS = "Succesfully Get the Question..";
+	public static final String GET_QUESTION_PLAYER = "Succesfully Get the Player..";
+	public static final String GET_QUESTION_PLAYQUIZ = "Succesfully Get the Playquiz..";
+	public static final String GET_ADMINUSERSYNC_SUCCESS = "Succesfully Get the AdminUserSync..";
+	public static final String GET_GLOBALCONFIG_SUCCESS = "Succesfully Get the GlobalConfiguration..";
+	public static final String GET_QUIZ_RESULT = "Succesfully Get the QuizResult..";
+	public static final String DELETE_QUIZ_SUCCESS = "Succesfully Delete the Quiz..";
+	public static final String DELETE_PLAY_QUIZ_SUCCESS = "Succesfully Delete the Playquiz..";
+	public static final String DELETE_ADMINUSERSYNC_SUCCESS = "Succesfully Delete the AdminUserSync..";
+	public static final String DELETE_PLAYER_SUCCESS = "Succesfully Delete the Player..";
+	public static final String PLAYER_ALREADY_EXIST = "Sorry Nick name already exist..";
+	public static final String SUCCESS_LOGIN = "Login Succesfully...";
+	public static final String FAILED_LOGIN = "Login failed...";
+}

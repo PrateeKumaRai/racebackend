@@ -1,0 +1,742 @@
+Save Quiz ::
+
+http://localhost:5902/api/quiz/save
+
+Request ::
+
+{
+"title" :"Java Basic",
+"description" : "Java basic test",
+ "listQuestn" : [ ],
+ "isPublish" : "no",
+  "pin" : ""
+}
+
+Response ::
+
+{
+"httpstatus": "CREATED",
+"description": "Succesfully Saved the Quiz..",
+"obj": {
+"quizId": 1,
+"title": "Java Basic",
+"description": "Java basic test",
+"listQuestn": [],
+"isPublish": "no",
+"pin": ""
+}
+}
+
+
+Update Quiz ::
+
+http://localhost:5902/api/quiz/update
+
+Request ::
+
+{
+"quizId" : 1,
+"title" :"Java Basic1",
+"description" : "Java basic test1",
+ "listQuestn" : [ ],
+ "isPublish" : "no",
+  "pin" : ""
+}
+
+Response ::
+
+{
+"httpstatus": "OK",
+"description": "Succesfully Update the Quiz Details",
+"obj": {
+"quizId": 1,
+"title": "Java Basic1",
+"description": "Java basic test1",
+"listQuestn": [],
+"isPublish": "no",
+"pin": ""
+}
+}
+
+Publish the Quiz ::
+
+http://localhost:5902/api/quiz/update
+
+Request ::
+
+{
+  "quizId": 1,
+  "title": "Java Basic1",
+  "description": "Java basic test1",
+  "listQuestn": [],
+  "isPublish": "yes",
+  "pin": ""
+}
+
+
+Response ::
+
+{
+"httpstatus": "OK",
+"description": "Succesfully Update the Quiz Details",
+"obj": {
+"quizId": 1,
+"title": "Java Basic1",
+"description": "Java basic test1",
+"listQuestn": [],
+"isPublish": "yes",
+"pin": "0677"
+}
+}
+
+Get Quiz by quizId ::
+
+http://localhost:5902/api/quiz/get/19
+
+Response ::
+
+{
+"httpstatus": "OK",
+"description": "Succesfully Get the Quiz..",
+"obj": {
+"quizId": 1,
+"title": "Java Basic1",
+"description": "Java basic test1",
+"listQuestn": [],
+"isPublish": "yes",
+"pin": "0677"
+}
+}
+
+Get All Quiz ::
+
+http://localhost:5902/api/quiz/getall
+
+Response ::
+
+{
+"httpstatus": "OK",
+"description": "Succesfully Get the Quiz..",
+"obj": [
+  {
+"quizId": 1,
+"title": "Java Basic1",
+"description": "Java basic test1",
+"listQuestn": [],
+"isPublish": "yes",
+"pin": "0677"
+}
+],
+}
+
+
+Save Question ::
+
+http://localhost:5902/api/question/save
+
+Request ::
+
+{
+"quiz" :{"quizId" : 1,"title" :"","description" :"","listQuestn" :[],"isPublish" :"","pin" : ""},
+"questnDescp" : "What is the latest version of java",
+ "answr" : [ ]
+}
+
+
+Response ::
+
+{
+"httpstatus": "CREATED",
+"description": "Succesfully Saved the Question..",
+"obj": {
+"questionId": 2,
+"questnDescp": "What is the latest version of java",
+"answr": [],
+}
+}
+
+
+Update Question ::
+
+http://localhost:5902/api/question/update
+
+Request :: 
+
+{
+  "questionId" : 2,
+  "quiz": {
+    "quizId": 1,
+    "title": "",
+    "description": "",
+    "listQuestn": [],
+    "isPublish": "",
+    "pin": ""
+  },
+  "questnDescp": "What is the latest version of java !!!",
+  "answr": []
+}
+
+
+Response ::
+
+{
+"httpstatus": "OK",
+"description": "Succesfully Update the Question Details",
+"obj": {
+"questionId": 2,
+"questnDescp": "What is the latest version of java !!!",
+"answr": [],
+}
+}
+
+
+Get Question By Quiz Id ::
+
+http://localhost:5902/api/question/get?quizId=1
+
+Response ::
+
+{
+"httpstatus": "OK",
+"description": "Succesfully Get the Question..",
+"obj": [
+  {
+"questionId": 2,
+"questnDescp": "What is the latest version of java !!!>>",
+"answr": [],
+}
+],
+}
+
+Get All Question ::
+
+http://localhost:5902/api/question/getall
+
+Response ::
+
+{
+"httpstatus": "OK",
+"description": "Succesfully Get the Question..",
+"obj": [
+  {
+"questionId": 2,
+"questnDescp": "What is the latest version of java !!!>>",
+"answr": [],
+}
+],
+}
+
+
+Save Answer ::
+
+http://localhost:5902/api/answer/save
+
+Request ::
+
+{
+  "questn": {
+    "questionId": 2,
+    "quiz": {
+      "quizId": 1,
+      "title": "",
+      "description": "",
+      "listQuestn": [],
+      "isPublish": "",
+      "pin": ""
+    },
+    "questnDescp": "",
+    "answr": []
+  },
+  "quizId": 1,
+  "description": "1.8",
+  "isTrueAnswr": "yes"
+}
+
+Response ::
+
+{
+"httpstatus": "CREATED",
+"description": "Succesfully Saved the Answer..",
+"obj": {
+"answerId": 3,
+"quizId": 1,
+"description": "1.8",
+"isTrueAnswr": "yes"
+}
+}
+
+
+Saved List Of Answer ::
+
+http://localhost:5902/api/answer/save/list
+
+Request ::
+
+[
+  {
+    "questn": {
+      "questionId": 18,
+      "quiz": {
+        "quizId": 17,
+        "title": "",
+        "description": "",
+        "listQuestn": [],
+        "isPublish": "",
+        "pin": ""
+      },
+      "questnDescp": "",
+      "answr": []
+    },
+    "quizId": 17,
+    "description": "James Gosling",
+    "isTrueAnswr": "yes"
+  },
+  {
+    "questn": {
+      "questionId": 18,
+      "quiz": {
+        "quizId": 17,
+        "title": "",
+        "description": "",
+        "listQuestn": [],
+        "isPublish": "",
+        "pin": ""
+      },
+      "questnDescp": "",
+      "answr": []
+    },
+    "quizId": 17,
+    "description": "steve jobs",
+    "isTrueAnswr": "no"
+  },
+  {
+    "questn": {
+      "questionId": 18,
+      "quiz": {
+        "quizId": 17,
+        "title": "",
+        "description": "",
+        "listQuestn": [],
+        "isPublish": "",
+        "pin": ""
+      },
+      "questnDescp": "",
+      "answr": []
+    },
+    "quizId": 17,
+    "description": "bill gates",
+    "isTrueAnswr": "no"
+  },
+  {
+    "questn": {
+      "questionId": 18,
+      "quiz": {
+        "quizId": 17,
+        "title": "",
+        "description": "",
+        "listQuestn": [],
+        "isPublish": "",
+        "pin": ""
+      },
+      "questnDescp": "",
+      "answr": []
+    },
+    "quizId": 17,
+    "description": "sundar pichai",
+    "isTrueAnswr": "no"
+  }
+]
+
+Response ::
+
+{
+"httpstatus": "CREATED",
+"description": "Succesfully Saved the Answers..",
+"obj": [
+  {
+"answerId": 19,
+"quizId": 17,
+"description": "James Gosling",
+"isTrueAnswr": "yes"
+},
+  {
+"answerId": 20,
+"quizId": 17,
+"description": "steve jobs",
+"isTrueAnswr": "no"
+},
+  {
+"answerId": 21,
+"quizId": 17,
+"description": "bill gates",
+"isTrueAnswr": "no"
+},
+  {
+"answerId": 22,
+"quizId": 17,
+"description": "sundar pichai",
+"isTrueAnswr": "no"
+}
+],
+}
+
+
+Update Answer ::
+
+http://localhost:5902/api/answer/update
+
+Request ::
+
+{
+  "answerId": "4",
+  "questn": {
+    "questionId": 2,
+    "quiz": {
+      "quizId": 1,
+      "title": "",
+      "description": "",
+      "listQuestn": [],
+      "isPublish": "",
+      "pin": ""
+    },
+    "questnDescp": "",
+    "answr": []
+  },
+  "quizId": 1,
+  "description": "1.11",
+  "isTrueAnswr": "yes"
+}
+
+Response ::
+
+{
+"httpstatus": "OK",
+"description": "Succesfully Update the Answer Details",
+"obj": {
+"answerId": 4,
+"quizId": 1,
+"description": "1.11",
+"isTrueAnswr": "yes"
+}
+}
+
+
+Get Answer by quizid and questionid
+
+http://localhost:5902/api/answer/get?quizId=1&questionId=2
+
+
+Response ::
+
+{
+"httpstatus": "OK",
+"description": "Succesfully Get the Answers..",
+"obj": [
+  {
+"answerId": 3,
+"quizId": 1,
+"description": "1.8",
+"isTrueAnswr": "yes"
+},
+  {
+"answerId": 5,
+"quizId": 1,
+"description": "1.5",
+"isTrueAnswr": "no"
+},
+  {
+"answerId": 6,
+"quizId": 1,
+"description": "1.12",
+"isTrueAnswr": "no"
+},
+  {
+"answerId": 4,
+"quizId": 1,
+"description": "1.11",
+"isTrueAnswr": "no"
+}
+],
+}
+
+
+Save The Player ::
+
+Request ::
+
+http://localhost:5902/api/player/save
+
+{
+  "quizId" : 1,
+  "nickName": "sumeet",
+  "playquiz": []
+ }
+ 
+Response ::
+
+{
+"httpstatus": "CREATED",
+"description": "Succesfully Saved the Player..",
+"obj": {
+"playerId": 7,
+"quizId": 1,
+"nickName": "sumeet",
+"playquiz": [],
+}
+}
+
+
+Get the Player ::
+
+Request ::
+
+http://localhost:5902/api/player/get?quizId=1&playerId=7
+
+Response :: 
+
+{
+"httpstatus": "OK",
+"description": "Succesfully Get the Player..",
+"obj": [
+  {
+"playerId": 7,
+"quizId": 1,
+"nickName": "sumeet",
+"playquiz": [],
+}
+],
+}
+
+Save the Playquiz :: 
+
+Request ::
+
+http://localhost:5902/api/playquiz/save
+
+{
+  "player": {
+    "playerId": 7,
+    "quizId": "",
+    "nickName": "",
+    "playquiz": []
+  },
+  "quizId": 1,
+  "questionId": 2,
+  "playerAnswr": "1.8",
+  "actualAnswer": "1.8",
+  "state": "pass"
+}
+
+Response ::
+
+{
+"httpstatus": "CREATED",
+"description": "Succesfully Saved the Playquiz..",
+"obj": {
+"playquizId": 8,
+"quizId": 1,
+"questionId": 2,
+"playerAnswr": "1.8",
+"actualAnswer": "1.8",
+"state": "pass"
+}
+}
+
+Get ::
+
+http://localhost:5902/api/playquiz/get?quizId=1&questionId=2&playerId=7
+
+Response ::
+
+{
+"httpstatus": "OK",
+"description": "Succesfully Get the Playquiz..",
+"obj": {
+"playquizId": 8,
+"quizId": 1,
+"questionId": 2,
+"playerAnswr": "1.8",
+"actualAnswer": "1.8",
+"state": "pass"
+}
+}
+
+
+Admin Login :: 
+
+Login  Success ::
+
+http://localhost:5902/api/admin/login
+
+Request ::
+
+{
+"username" : "admin",
+ "password" : "admin" 
+}
+
+Response ::
+
+{
+"httpstatus": "OK",
+"description": "Login succfully...",
+"obj": {
+"username": "admin",
+"password": "admin"
+}
+}
+
+
+Login  Failed ::
+
+http://localhost:5902/api/admin/login
+
+Request ::
+
+{
+"username" : "admin",
+ "password" : "admin123" 
+}
+
+Response ::
+
+{
+"httpstatus": "UNAUTHORIZED",
+"description": "Login failed...",
+"obj": null
+}
+
+AdminUserSync ::
+
+http://localhost:5902/api/admin/syncdatauser
+
+Request ::
+
+{
+  "quizId": 4,
+  "questionIndex":1
+}
+
+
+Response ::
+
+{
+"httpstatus": "OK",
+"description": "Succesfully Update the AdminUserSync Details",
+"obj": {
+"syncId": 146,
+"quizId": 4,
+"questionIndex": 1
+}
+}
+
+
+
+http://localhost:5902/api/admin/getsync?quizId=1
+
+{
+"httpstatus": "OK",
+"description": "Succesfully Get the AdminUserSync..",
+"obj": {
+"syncId": 147,
+"quizId": 1,
+"questionIndex": 0
+}
+}
+
+
+http://localhost:5902/api/admin/deletesync/1
+
+{
+"httpstatus": "NO_CONTENT",
+"description": "Succesfully Delete the AdminUserSync..",
+"obj": null
+}
+
+
+
+http://localhost:5902/api/playquiz/getresult?quizId=1
+
+{
+"httpstatus": "OK",
+"description": "Succesfully Get the Playquiz..",
+"obj": [
+  {
+"playquizId": 204,
+"quizId": 1,
+"questionId": 0,
+"playerAnswr": "1.11",
+"actualAnswer": "1.11",
+"state": "right"
+},
+  {
+"playquizId": 205,
+"quizId": 1,
+"questionId": 0,
+"playerAnswr": "James Gosling",
+"actualAnswer": "James Gosling",
+"state": "right"
+},
+  {
+"playquizId": 206,
+"quizId": 1,
+"questionId": 2,
+"playerAnswr": "1.8",
+"actualAnswer": "1.11",
+"state": "wrong"
+},
+  {
+"playquizId": 207,
+"quizId": 1,
+"questionId": 12,
+"playerAnswr": "1.11",
+"actualAnswer": "1.8",
+"state": "wrong"
+}
+],
+}
+
+
+
+http://localhost:5902/api/admin/getquizresult?quizId=1
+
+{
+"httpstatus": "OK",
+"description": "Succesfully Get the QuizResult..",
+"obj": [
+  {
+"playerId": 202,
+"nickName": "sumee5",
+"state": "right",
+"quizId": 1
+},
+  {
+"playerId": 202,
+"nickName": "sumee5",
+"state": "right",
+"quizId": 1
+}
+],
+}
+
+Delete PlayQuiz ::
+
+http://localhost:5902/api/playquiz/delete/354
+
+
+http://localhost:5902/api/playquiz/delete/1
+
+{
+"httpstatus": "NO_CONTENT",
+"description": "Succesfully Delete the Playquiz..",
+"obj": null
+}
+
+
+If Already Deleted ::
+
+{
+"httpstatus": "NOT_FOUND",
+"description": "Sorry we didn't got the Playquiz data",
+"obj": [],
+}
