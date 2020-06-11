@@ -94,11 +94,10 @@ public class JwtUserDetailsService implements UserDetailsService {
 		cd.setCity(user.getCity());
 		cd.setFloor(user.getFloor());
 		cd.setCountry(user.getCountry());
-		cd.setFloor(user.getFloor());
 		cd.setZip(user.getZip());
 		try {
 			String email =user.getEmailId();
-			Optional<CubicalDetails> optionalUserEntity=	cubicalRepo.getbyEmailId( email);
+			Optional<CubicalDetails> optionalUserEntity= cubicalRepo.getbyEmailId( email);
 			if (optionalUserEntity.equals(null) || optionalUserEntity == null || !(optionalUserEntity.isPresent())) {
 				cubicalRepo.save(cd);
 				status=true;

@@ -26,6 +26,7 @@ import com.cg.util.SecurityConstant;
  */
 @RestController
 @CrossOrigin("*")
+@RequestMapping(value = "/race/api/v1/users/")
 public class UserController {
 	
 	
@@ -41,7 +42,7 @@ public class UserController {
 		if (user.getEmailId() != "" ) {
 			try {
 		boolean status=	 userDetailsService.updateProfile(user);
-			if(status==true) {
+			if(status==true) {	
 			jwtResponse.setStatusCode(200);
 			return new ResponseEntity<Object>(jwtResponse, HttpStatus.OK);
 			}else {

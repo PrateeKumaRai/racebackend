@@ -35,6 +35,7 @@ import com.cg.service.JwtUserDetailsService;
  */
 @RestController
 @CrossOrigin("*")
+@RequestMapping(value = "/race/api/v1/users/")
 public class JwtAuthenticationController {
 
 	@Autowired
@@ -70,9 +71,9 @@ public class JwtAuthenticationController {
 			UserEntity user = userRepository.findByEmailIdIgnoreCase(authenticationRequest.getEmailId());
 
 			if (user != null) {
-				Boolean sucess = authenticate(authenticationRequest.getEmailId(), authenticationRequest.getPassword());
+				Boolean success = authenticate(authenticationRequest.getEmailId(), authenticationRequest.getPassword());
 				if (user.getIsEnabled() == true) {
-					if (sucess == false) {
+					if (success == false) {
 						jwtResponse.setStatusCode(403);
 						return new ResponseEntity<Object>(jwtResponse, HttpStatus.OK);
 					} else {

@@ -27,7 +27,7 @@ public class EmailConfig {
 	 *
 	 */
 	public boolean sendEmail(String to,String sub,String txt,final MultipartFile file){
-		boolean falg=false;
+		boolean flag=false;
 		try {
 			MimeMessage message=mailSender.createMimeMessage();
 			MimeMessageHelper helper=new MimeMessageHelper(message,true);
@@ -48,10 +48,10 @@ public class EmailConfig {
 			}
 			System.out.println(txt);
 			mailSender.send(message);
-			falg=true;
+			flag=true;
 		} catch (Exception e) {
-			falg=false;
+			flag=false;
 		}	
-		return falg;
+		return flag;
 	}
 }
