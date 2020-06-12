@@ -1,4 +1,4 @@
-package com.cg;
+package com.race;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,8 +11,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 @EnableJpaAuditing
 @EnableEurekaClient
 public class SeatVisualizationServiceApplication {
-	
-	 private static final Logger LOGGER=LoggerFactory.getLogger(SeatVisualizationServiceApplication.class);
+
+	private static final Logger LOGGER = LoggerFactory.getLogger(SeatVisualizationServiceApplication.class);
 
 	public static void main(String[] args) {
 		LOGGER.info(" Inside SeatVisualizationServiceApplication Starter Class");
